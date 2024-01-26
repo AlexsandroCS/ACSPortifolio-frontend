@@ -1,0 +1,35 @@
+header{
+  width: 100%;
+  background-color: #1e1e1e;
+  height: 50px;
+}
+
+.top-site{
+  width: 100%;
+  display: grid;
+  grid-template-areas: "logo menu procurar";
+}
+
+.top-text-logo{
+  grid-area: logo;
+  width: 100%;
+}
+
+.top-text-logo p{
+  font-family: 'Alata', sans-serif;
+  color: #ccc;
+  font-size: 30px;
+  margin: 3px 0 3px 6%;
+}
+.top-text-logo p span{
+  font-size: 32px;
+  color: #808080;
+}
+
+.top-menu{
+  grid-area: menu;
+}
+
+.top-procura{
+  grid-area: procurar;
+}

@@ -1,0 +1,17 @@
+footer{
+  width: 100%;
+  background-color: #1e1e1e;
+  border-top: 5px solid rebeccapurple;
+  position: fixed;
+  bottom: 0;
+}
+
+.final{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 10px;
+  color: #fff;
+}
+
+#p1{text-align: left;}
+#p2{text-align: right;}

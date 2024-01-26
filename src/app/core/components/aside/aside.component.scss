@@ -1,0 +1,47 @@
+aside{
+  width: 15%;
+  height: 95%;
+  background: #ccc;
+  position: fixed;
+}
+.image-user{
+  display: grid;
+  width: 100%;
+}
+.image-user img{
+  width: 60%;
+  background-color: #1e1e1e;
+  border: 5px solid rebeccapurple;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+
+// info-user
+
+.info-user{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.info-user ol{
+  list-style: none;
+  padding: 0;
+}
+
+.info-user ol li{
+  border-bottom: 1px solid #adadad;
+}
+
+.info-user ol li span{
+  font-family: "Coda";
+  color: #696969;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.info-user ol li p{
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
