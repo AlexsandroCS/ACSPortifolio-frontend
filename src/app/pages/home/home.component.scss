@@ -1,0 +1,112 @@
+section{
+  width: 100%;
+}
+
+// Posts do site
+.post-projects{
+  width: 90%;
+  background-color: #ccc;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.bloco-postagem{
+  padding: 1%;
+  display: grid;
+  grid-template-columns: 15% 5% auto auto;
+  grid-template-rows: 40px 30px 30px auto;
+  grid-template-areas:
+    "image titulo titulo titulo"
+    "image tag tag tag"
+    "image data data data"
+    "image texto texto texto";
+}
+
+// Image
+.image-postagem{
+  grid-area: image;
+  width: 100%;
+  height: 250px;
+}
+.image-postagem img{
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: 1px solid #6c6c6c;
+}
+
+// titulo
+.titulo-postagem{
+  grid-area: titulo;
+}
+.titulo-postagem p{
+  font-family: 'Alata', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 0 5px;
+}
+
+// tag
+.assunto-postagem{
+  grid-area: tag;
+  justify-self: start;
+}
+// data
+.data-postagem{
+  grid-area: data;
+  justify-self: start;
+}
+
+// tag e data
+.assunto-postagem p, .data-postagem p{
+  display: inline;
+  font-family: "Coda";
+  font-size: 18px;
+  font-weight: 900;
+  color: #808080;
+  margin: 0 0 0 10px;
+}
+
+.assunto-postagem span{
+  font-family: 'Alata', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  background-color: #e67c3c;
+  border-radius: 3px;
+  color: #fff;
+  margin: 0 0 0 5px;
+  padding: 2px;
+}
+
+.data-postagem span{
+  font-family: "Coda";
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 3px;
+  color: #1e1e1e;
+  margin: 0 0 0 5px;
+  padding: 2px;
+}
+
+// texto
+.spoiler-postagem{
+  grid-area: texto;
+  background-color: #e2e1e1;
+  margin: 0 0 0 10px;
+  border-radius: 4px;
+  border: 1px solid #6c6c6c;
+}
+
+.spoiler-postagem p ,.spoiler-postagem span{
+  font-family: "Coda";
+  font-size: 15px;
+  font-weight: 900;
+  border-radius: 3px;
+  color: #1e1e1e;
+  margin: 2px 0 0 5px;
+  padding: 2px;
+}
+.spoiler-postagem span{
+  color: rgb(94, 94, 94);
+  text-decoration: underline;
+}

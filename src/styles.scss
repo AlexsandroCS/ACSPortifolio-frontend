@@ -4,7 +4,16 @@
 body{
   background-image: url("./assets/images/Dark_moon.png");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: 100%;
   margin: 0;
   padding: 0;
+}
+
+app-root{
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "aside section"
+    "footer footer";
 }

@@ -1,8 +1,7 @@
 aside{
-  width: 15%;
-  height: 95%;
+  width: 100%;
   background: #ccc;
-  position: fixed;
+  border-bottom-right-radius: 4px;
 }
 .image-user{
   display: grid;
@@ -11,7 +10,7 @@ aside{
 .image-user img{
   width: 60%;
   background-color: #1e1e1e;
-  border: 5px solid rebeccapurple;
+  border: 5px solid #6c6c6c;
   border-radius: 50%;
   margin: 10px auto;
 }
