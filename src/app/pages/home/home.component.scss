@@ -5,34 +5,38 @@ section{
 // Posts do site
 .post-projects{
   width: 90%;
-  background-color: #ccc;
+  height: auto;
+  background-color: #fff;
   margin: 0 auto;
   border-radius: 4px;
 }
 
 .bloco-postagem{
+  width: auto;
+  height: 175px;
   padding: 1%;
   display: grid;
-  grid-template-columns: 15% 5% auto auto;
-  grid-template-rows: 40px 30px 30px auto;
+  //grid-template-columns: 10% auto auto auto;
+  //grid-template-rows: 40px 30px 30px auto;
   grid-template-areas:
     "image titulo titulo titulo"
     "image tag tag tag"
     "image data data data"
     "image texto texto texto";
+  border-bottom: 5px solid #e4e4e4;
 }
 
 // Image
 .image-postagem{
   grid-area: image;
-  width: 100%;
-  height: 250px;
+  width: 155px;
+  height: 182px;
 }
 .image-postagem img{
   width: 100%;
   height: 100%;
   border-radius: 4px;
-  border: 1px solid #6c6c6c;
+
 }
 
 // titulo
@@ -91,22 +95,111 @@ section{
 // texto
 .spoiler-postagem{
   grid-area: texto;
-  background-color: #e2e1e1;
+  background-color: #ececec;
   margin: 0 0 0 10px;
   border-radius: 4px;
-  border: 1px solid #6c6c6c;
 }
 
 .spoiler-postagem p ,.spoiler-postagem span{
   font-family: "Coda";
-  font-size: 15px;
-  font-weight: 900;
+  font-size: 14px;
   border-radius: 3px;
-  color: #1e1e1e;
-  margin: 2px 0 0 5px;
+  color: #424242;
+  margin: 0;
   padding: 2px;
 }
+.spoiler-postagem p{
+  // Aplicando apenas 4 linhas no texto.
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
 .spoiler-postagem span{
-  color: rgb(94, 94, 94);
+  color: #3a4655;
   text-decoration: underline;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bolder;
+}
+.spoiler-postagem span:hover{
+  color: #1e1e1e;
+}
+
+// Media Query da postagem.
+
+@media (max-width: 1690px){
+  .bloco-postagem{
+    height: 200px;
+  }
+}
+@media (max-width: 1355px){
+  .bloco-postagem{
+    height: 170px;
+  }
+  .image-postagem{
+    grid-area: image;
+    width: 150px;
+    height: 170px;
+  }
+  .titulo-postagem p{
+    font-size: 24px;
+  }
+  .assunto-postagem p, .data-postagem p{
+    font-size: 13px;
+  }
+  .data-postagem span{
+    font-size: 13px;
+  }
+  .spoiler-postagem p{
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media (max-width: 1100px){
+  .bloco-postagem{
+    height: 135px;
+  }
+  .image-postagem{
+    grid-area: image;
+    width: 125px;
+    height: 135px;
+  }
+  .titulo-postagem p{
+    font-size: 17px;
+  }
+  .assunto-postagem span{
+    font-size: 9px;
+  }
+  .spoiler-postagem p{
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media (max-width: 900px){
+  .bloco-postagem{
+    height: auto;
+  }
+  .titulo-postagem p{
+    font-size: 20px;
+  }
+  .image-postagem{
+    display: none;
+  }
+  .spoiler-postagem p{
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media (max-width: 700px){
+  .titulo-postagem p{
+    margin: 0;
+  }
+  .assunto-postagem p, .data-postagem p{
+    margin: 0;
+  }
+  .spoiler-postagem {
+    margin: 0;
+  }
 }

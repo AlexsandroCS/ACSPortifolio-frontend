@@ -1,7 +1,7 @@
 footer{
+  margin-top: 3%;
   width: 100%;
-  background-color: #1e1e1e;
-  border-top: 2px solid #6c6c6c;;
+  background-color: #3a4655;
 }
 
 .final{
@@ -9,7 +9,18 @@ footer{
   grid-template-columns: 50% 50%;
   padding: 10px;
   color: #ccc;
+  font-family: 'Alata', sans-serif;
 }
 
 #p1{text-align: left;}
 #p2{text-align: right;}
+
+
+@media (max-width: 450px){
+  .final{
+    grid-template-columns: 100%;
+  }
+  #p1,#p2{
+    text-align: center;
+  }
+}

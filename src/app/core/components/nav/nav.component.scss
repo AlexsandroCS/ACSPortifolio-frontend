@@ -1,31 +1,9 @@
 // Biografia
-
 .biografia-user{
   width: 90%;
-  background-color: #ccc;
-  margin: 4% auto 6% auto;
+  background-color: #fff;
+  margin: 2% auto;
   border-radius: 4px;
-}
-
-.title-biografia{
-  display: inline-flex;
-  background-color: #1e1e1e;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  padding: 0.2%;
-}
-.title-biografia p{
-  margin: 0;
-  padding: 5px;
-  color: #ccc;
-  font-family: 'Alata', sans-serif;
-}
-
-.text-biografia p{
-  margin: 0 2% 1% 2%;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
 }
 
 .skill-biografia img{
@@ -41,12 +19,13 @@
 .skill-biografia ol li{
   display: inline-flex;
   border-radius: 8px;
-  background-color: #1e1e1e;
+  background-color: #3a4655;
   margin: 1%;
   padding: 5px;
 }
 .skill-biografia ol li:hover{
-  background-color: #494949;
+  background-color: #4a6280;
+  cursor: pointer;
 }
 
 .skill-biografia ol li span{
@@ -55,4 +34,30 @@
   color: #fff;
   margin-left: 3px;
   font-family: "Coda";
+}
+
+
+// Media Query Biografia
+@media (max-width: 1230px){
+  .text-biografia p,.skill-biografia ol li span{
+    font-size: 13px;
+  }
+  .skill-biografia ol li{
+    padding: 3px;
+  }
+  .skill-biografia img{
+    width: 26px;
+  }
+}
+
+@media (max-width: 900px){
+  .text-biografia p,.skill-biografia ol li span{
+    font-size: 11px;
+  }
+  .skill-biografia ol li{
+    padding: 2px;
+  }
+  .skill-biografia img{
+    width: 19px;
+  }
 }

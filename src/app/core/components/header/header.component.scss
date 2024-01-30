@@ -1,20 +1,21 @@
 header{
   width: 100%;
-  height: 70px;
-  background-color: #1e1e1e;
+  background-color: #3a4655;
 }
 
 .top-site{
   width: 100%;
-  height: 100%;
+  height: 70px;
   display: grid;
-  grid-template-areas: "logo procurar menu";
+  grid-template-columns: 25% auto;
+  grid-template-areas: "logo menu";
 }
 
 .top-text-logo{
   grid-area: logo;
   align-self: center;
   width: 100%;
+  cursor: pointer;
 }
 
 .top-text-logo p{
@@ -29,8 +30,24 @@ header{
 }
 
 // top-procura
+.btn-procura{
+  background-color: #ccc;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 2%;
+  right: 1%;
+  border: 2px solid #1e1e1e;
+  user-select: none;
+}
+.btn-procura:hover{
+  cursor: pointer;
+  background-color: #808080;
+}
+
 .top-procura{
-  grid-area: procurar;
+  display: none;
 }
 
 .top-procura{
@@ -41,7 +58,7 @@ header{
 .form-search{
   display: flex;
   border: 2px solid #000;
-  background-color: #ccc;
+  background-color: #fff;
   border-radius: 48px;
   padding: 6px;
 }
@@ -56,7 +73,7 @@ header{
   font-family: "Coda";
   width: 500px;
   height: 18px;
-  background-color: #ccc;
+  background-color: #fff;
   border: none;
   padding: 1.3%;
   font-size: medium;
@@ -66,7 +83,7 @@ header{
 }
 
 .input-search:focus::placeholder{
-  color: #3a1121;
+  color: #3a4655;
 }
 
 .input-search:focus{
@@ -77,19 +94,19 @@ header{
 // top-menu
 .top-menu{
   grid-area: menu;
-  width: 100%;
-  justify-self: center;
   align-self: center;
 }
 
 .top-menu ol{
-  width: -moz-available;
-  display: inline-flex;
+  width: 80%;
+  grid-template-columns: auto auto auto;
+  display: grid;
   list-style: none;
+  padding: 0;
 }
 
 .top-menu ol li{
-  width: 20%;
+  width: auto;
 }
 
 .top-menu ol li p{
@@ -104,3 +121,33 @@ header{
   cursor: pointer;
   color: #808080;
 }
+
+@media (max-width: 900px){
+  .top-site{
+    height: auto;
+    grid-template-columns: 100%;
+    grid-template-areas: "logo" "menu";
+  }
+  .top-text-logo p{
+    margin: 5px;
+    text-align: center;
+  }
+  .top-menu{
+    width: 90%;
+  }
+  .top-menu ol{
+    width: 100%;
+  }
+  .btn-procura{
+    top: 4%;
+    right: 1.5%;
+  }
+}
+
+@media (max-width: 700px){
+
+}
+
+// 700px de largura da tela a gente elimina o search e cria um botão/ícone que vai abrir uma "tela" para pesquisas.
+
+// 450px de largura da tela a gente coloca o menu pra baixo da logo.
