@@ -2,33 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 body{
-  //background-image: url("./assets/images/Dark_moon.png");
-  background-color: #e4e4e4;
-  //background-repeat: no-repeat;
-  //background-attachment: fixed;
-  //background-size: 100%;
   margin: 0;
   padding: 0;
+  background-color: #e4e4e4;
 }
-
-app-root{
+core-home{
   display: grid;
+  grid-template-columns: 15% auto;
   grid-template-areas:
-    "header header"
-    "aside section"
-    "footer footer";
+  "header header"
+  "aside section"
+  "footer footer";
 }
-
-@media (max-width: 700px){
-  app-root{
-    grid-template-areas:
-      "header"
-      "aside"
-      "section"
-      "footer";
-  }
-}
-
 
 // títulos de informações.
 .title-biografia{

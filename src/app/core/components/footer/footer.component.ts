@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'core-footer',
   standalone: true,
   imports: [],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  email: string = "Alexsandro.ACS@gmail.com";
+  @Input() email: string = '';
 }

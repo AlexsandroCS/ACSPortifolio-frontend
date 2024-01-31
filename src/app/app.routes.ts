@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { ProjetcComponent } from './pages/project/projetc.component';
+import { AdministrationComponent } from './features/administration/administration.component';
+import { ProjectComponent } from './features/home/components/project/project.component';
+import { HomeComponent } from './features/home/home.component';
 
 export const routes: Routes = [
   {
@@ -10,7 +11,12 @@ export const routes: Routes = [
   },
   {
     path: 'project',
-    component: ProjetcComponent,
+    component: ProjectComponent,
     title: 'Página de Projetos do Portifólio.'
+  },
+  {
+    path: 'administration',
+    component: AdministrationComponent,
+    title: 'Página de administração de postagem.'
   }
 ];
