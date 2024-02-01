@@ -1,0 +1,75 @@
+section{
+  width: 100%;
+}
+
+.list-posters{
+  width: 90%;
+  height: 800px;
+  background-color: #fff;
+  margin: 2% auto;
+  border-radius: 4px;
+}
+
+.title-list-post{
+  background-color: #3a4655;
+  border-radius: 4px 4px 0 0;
+}
+.title-list-post p{
+  padding: 1%;
+  color: #ccc;
+  font-family: 'Alata', sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.list-posters ol{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list-posters ol li{
+  border-bottom: 2px solid #ccc;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+.list-posters ol li:nth-of-type(1){
+  background-color: #ccc;
+  color: #3a4655;
+}
+
+.list-posters ol li:nth-of-type(1) p{
+  font-size: 20px;
+  margin-bottom: 1%;
+}
+
+.list-posters ol li p{
+  font-weight: 600;
+  font-family: 'Coda';
+  font-size: 14px;
+  margin-left: 4%;
+  text-align: center;
+  align-self: center;
+}
+.list-posters ol li p:nth-of-type(1){
+  text-align: left;
+}
+
+.btn-modify,.btn-delete{
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Coda";
+  margin-left: 1%;
+  border: 1px solid #1e1e1e;
+  border-radius: 4px;
+  background-color: #ccc;
+}
+.btn-modify:hover{
+  background-color: #3a4655;
+  color: rgb(22, 123, 218);
+}
+.btn-delete:hover{
+  background-color: #3a4655;
+  color: rgb(240, 10, 10);
+}
+

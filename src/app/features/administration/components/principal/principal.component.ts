@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { CoreModule } from '../../../../core/core.module';
 
 @Component({
-  selector: 'app-section',
+  selector: 'root-principal',
   standalone: true,
-  imports: [CoreModule],
+  imports: [],
   templateUrl: './principal.component.html',
   styleUrl: './principal.component.scss'
 })

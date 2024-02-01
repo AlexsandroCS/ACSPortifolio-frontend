@@ -108,16 +108,19 @@ header{
 .top-menu ol li{
   width: auto;
 }
-
 .top-menu ol li p{
   text-align: center;
   font-family: 'Alata', sans-serif;
-  color: #ccc;
-  font-size: 15px;
   margin: 0;
 }
 
-.top-menu ol li p:hover{
+.top-menu ol li p a{
+  text-decoration: none;
+  color: #ccc;
+  font-size: 15px;
+}
+
+.top-menu ol li p a:hover{
   cursor: pointer;
   color: #808080;
 }

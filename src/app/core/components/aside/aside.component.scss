@@ -55,12 +55,12 @@ aside{
 }
 
 @media (max-width: 900px){
-  .image-user{
-    width: 75%;
+  aside{
+    width: auto;
   }
 }
 
-@media (max-width: 700px){
+@media (max-width: 705px){
   aside{
     width: 90%;
     margin: 0 auto;
@@ -99,6 +99,6 @@ aside{
 
 @media (max-width: 300px){
   .image-user{
-    width: 65%;
+    width: 85%;
   }
 }

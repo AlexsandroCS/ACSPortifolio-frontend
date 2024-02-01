@@ -1,0 +1,30 @@
+.painel-post-amn{
+  grid-area: aside;
+  width: 100%;
+  background-color: #fff;
+  padding: 7% 0 5% 0;
+}
+.painel-dados-amn{
+  width: 90%;
+}
+.painel-dados-amn ol{
+  width: 100%;
+  list-style: none;
+  margin: 1% 0 0 0;
+  padding: 0 0 0 15px;
+}
+.painel-dados-amn ol li{
+  padding: 3px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.painel-dados-amn ol li:hover{
+  background-color: #3a4655;
+  cursor: pointer;
+  color: #fff;
+}
+.painel-dados-amn ol li p{
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 10px;
+}

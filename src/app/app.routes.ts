@@ -15,7 +15,7 @@ export const routes: Routes = [
     title: 'Página de Projetos do Portifólio.'
   },
   {
-    path: 'administration',
+    path: 'admin',
     component: AdministrationComponent,
     title: 'Página de administração de postagem.'
   }

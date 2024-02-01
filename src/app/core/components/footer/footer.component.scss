@@ -16,11 +16,17 @@ footer{
 #p2{text-align: right;}
 
 
-@media (max-width: 450px){
+@media (max-width: 470px){
   .final{
     grid-template-columns: 100%;
   }
   #p1,#p2{
     text-align: center;
+  }
+}
+
+@media (max-width: 255px){
+  #p1,#p2{
+    font-size: 13px;
   }
 }

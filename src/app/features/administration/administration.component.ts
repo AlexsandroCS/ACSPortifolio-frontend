@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { AdministrationModule } from './administration.module';
 import { CoreModule } from '../../core/core.module';
 
 @Component({
-  selector: 'app-administration',
+  selector: 'root-amn',
   standalone: true,
-  imports: [CoreModule],
+  imports: [AdministrationModule, CoreModule],
   templateUrl: './administration.component.html',
   styleUrl: './administration.component.scss'
 })
