@@ -9,14 +9,21 @@
         <p>Data Postagem</p>
         <p>Ações</p>
       </li>
-      <li>
-        <p>O coringa mata sorrindo e o urso mata abrançando.</p>
-        <p>01/02/2024</p>
-        <p>
-          <button class="btn-modify">Alterar</button>
-          <button class="btn-delete">Excluir</button>
-        </p>
-      </li>
+
+      @for (post of listPost$ | async; track post.id) {
+        <li>
+          <p>{{ post.title }}</p>
+          <p>{{ post.date }}</p>
+          <p>
+            <button class="btn-modify">Alterar</button>
+            <button class="btn-delete">Excluir</button>
+          </p>
+        </li>
+      }@empty {
+        <li>
+          <p>Nenhum post foi encontrado!</p>
+        </li>
+      }
     </ol>
   </div>
 </section>
