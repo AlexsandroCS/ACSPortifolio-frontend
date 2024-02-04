@@ -1,13 +1,14 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import { Component} from '@angular/core';
 import { Post } from '../../../../shared/model/post';
 import { ServicesService } from '../../../../shared/services/services.service';
 import { Observable } from 'rxjs';
+import {formatterDatePipe} from '../../../../shared/pipes/formatter-date.pipe';
 
 @Component({
   selector: 'root-principal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, formatterDatePipe],
   templateUrl: './principal.component.html',
   styleUrl: './principal.component.scss'
 })
