@@ -6,7 +6,7 @@ body{
   padding: 0;
   background-color: #e4e4e4;
 }
-core-home,root-amn{
+core-home, root-home-admin{
   display: grid;
   grid-template-columns: 14% auto;
   grid-template-areas:
@@ -16,31 +16,31 @@ core-home,root-amn{
 }
 
 @media (max-width: 1530px){
-  core-home,root-amn{
+  core-home,root-home-admin{
     grid-template-columns: 18% auto;
   }
 }
 
 @media (max-width: 1180px){
-  core-home,root-amn{
+  core-home,root-home-admin{
     grid-template-columns: 22% auto;
   }
 }
 
 @media (max-width: 970px){
-  core-home,root-amn{
+  core-home,root-home-admin{
     grid-template-columns: 25% auto;
   }
 }
 
 @media (max-width: 850px){
-  core-home,root-amn{
+  core-home,root-home-admin{
     grid-template-columns: auto 70%;
   }
 }
 
 @media (max-width: 705px){
-  core-home,root-amn{
+  core-home,root-home-admin{
     grid-template-columns: auto;
     grid-template-areas: "header" "aside" "section" "footer";
   }

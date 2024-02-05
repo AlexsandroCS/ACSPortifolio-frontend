@@ -1,22 +1,15 @@
 import { Routes } from '@angular/router';
-import { AdministrationComponent } from './features/administration/administration.component';
-import { ProjectComponent } from './features/home/components/project/project.component';
-import { HomeComponent } from './features/home/home.component';
 
-export const routes: Routes = [
+export const APP_ROUTES: Routes = [
   {
-    path: '',
-    component: HomeComponent,
-    title: 'AlexsandroCS - Portifólio | Início'
+    path: '', pathMatch: 'full', redirectTo: ''
   },
   {
-    path: 'project',
-    component: ProjectComponent,
-    title: 'Página de Projetos do Portifólio.'
+    path: '',
+    loadChildren: () => import('./features/home/home.routes').then(m => m.ROUTE_HOME)
   },
   {
     path: 'admin',
-    component: AdministrationComponent,
-    title: 'Página de administração de postagem.'
+    loadChildren: () => import('./features/administration/administration.routes').then(m => m.ROUTE_ADMIN)
   }
 ];

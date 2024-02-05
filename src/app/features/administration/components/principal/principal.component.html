@@ -11,14 +11,14 @@
       </li>
 
       @for (post of listPost$ | async; track post.id) {
-        <li>
-          <p>{{ post.title }}</p>
-          <p>{{ post.date | transformDate}}</p>
-          <p>
-            <button class="btn-modify">Alterar</button>
-            <button class="btn-delete">Excluir</button>
-          </p>
-        </li>
+      <li>
+        <p>{{ post.title }}</p>
+        <p>{{ post.date | transformDate}}</p>
+        <p>
+          <button class="btn-modify">Alterar</button>
+          <button class="btn-delete">Excluir</button>
+        </p>
+      </li>
       }@empty {
         <li>
           <p>Nenhum post foi encontrado!</p>

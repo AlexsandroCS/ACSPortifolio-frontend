@@ -5,10 +5,10 @@ import { ProjectComponent } from './components/project/project.component';
 import { CoreModule } from '../../core/core.module';
 import { RouterModule } from '@angular/router';
 
-const moduleImportExport = [PrincipalComponent, ProjectComponent];
+const homeImportExport = [PrincipalComponent, ProjectComponent];
 
 @NgModule({
-  imports: [CommonModule, moduleImportExport, CoreModule, RouterModule],
-  exports: [moduleImportExport],
+  imports: [CommonModule, homeImportExport, CoreModule, RouterModule],
+  exports: [homeImportExport],
 })
 export class HomeModule { }

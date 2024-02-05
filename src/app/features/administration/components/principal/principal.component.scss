@@ -23,27 +23,27 @@ section{
   margin-bottom: 0;
 }
 
-.list-posters ol{
+ol{
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.list-posters ol li{
+ol li{
   border-bottom: 2px solid #ccc;
   display: grid;
   grid-template-columns: 33% 33% 33%;
 }
-.list-posters ol li:nth-of-type(1){
+ol li:nth-of-type(1){
   background-color: #ccc;
   color: #3a4655;
 }
 
-.list-posters ol li:nth-of-type(1) p{
+ol li:nth-of-type(1) p{
   font-size: 20px;
   margin-bottom: 1%;
 }
 
-.list-posters ol li p{
+ol li p{
   font-weight: 600;
   font-family: 'Coda';
   font-size: 14px;
@@ -51,7 +51,7 @@ section{
   text-align: center;
   align-self: center;
 }
-.list-posters ol li p:nth-of-type(1){
+ol li p:nth-of-type(1){
   text-align: left;
 }
 
