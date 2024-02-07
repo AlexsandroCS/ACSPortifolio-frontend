@@ -1,1 +1,17 @@
-<p>formulario-post works!</p>
+<section>
+  <div class="list-posters">
+    <div class="title-list-post">
+      <p>Criar novo post</p>
+    </div>
+
+    <form class="form-novo-post" [formGroup]="form" action="javascript:void(0)">
+      <input type="text" name="title" formControlName="title" placeholder="título">
+      <input type="text" name="content" formControlName="content" placeholder="texto">
+      <input type="text" name="tag" formControlName="tag" placeholder="tags">
+      <input type="text" name="linkImage" formControlName="linkImage" placeholder="Link da imagem">
+
+      <button [disabled]="!form.valid" type="submit">Enviar</button>
+    </form>
+
+  </div>
+</section>

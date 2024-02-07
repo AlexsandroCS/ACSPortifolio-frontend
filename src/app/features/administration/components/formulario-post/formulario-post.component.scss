@@ -1,0 +1,37 @@
+.form-novo-post{
+  display: grid;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-novo-post input{
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-family: "Coda";
+  color: #9e9e9e;
+  font-size: 13px;
+  margin: 1%;
+  padding: 10px;
+}
+
+.form-novo-post input:focus::placeholder,
+.form-novo-post input:valid,
+.form-novo-post input:focus
+{
+  color: #1e1e1e;
+}
+
+.form-novo-post button{
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Coda";
+  border: 1px solid #1e1e1e;
+  border-radius: 4px;
+  background-color: #ccc;
+}
+
+.form-novo-post button:hover{
+  background-color: #3a4655;
+  color: rgb(22, 123, 218);
+}

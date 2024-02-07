@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { PrincipalComponent } from '../../components/principal/principal.component';
-import { RouterModule } from '@angular/router';
 import { CoreModule } from '../../../../core/core.module';
 import { AdministrationModule } from '../../administration.module';
 

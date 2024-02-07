@@ -1,0 +1,28 @@
+.component-pop-up-erro{
+  width: 500px;
+  height: auto;
+  padding: 10px;
+  font-family: "Coda";
+}
+
+.component-pop-up-erro h1{
+  text-align: center;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.component-pop-up-erro mat-dialog-content{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+mat-dialog-actions{
+  text-align: center;
+}
+
+mat-dialog-actions button{
+  background: #3a4655;
+  color: #fff;
+  margin: 0 auto;
+}
