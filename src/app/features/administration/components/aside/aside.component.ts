@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'root-aside',
@@ -9,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AsideComponent {
 
+  constructor(private router: Router, private rotaAtual: ActivatedRoute){
+
+  }
+
+  novoPost(){
+    this.router.navigate(['novo-post'], {relativeTo: this.rotaAtual});
+  }
 }

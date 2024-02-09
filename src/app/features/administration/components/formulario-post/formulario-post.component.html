@@ -6,12 +6,19 @@
 
     <form class="form-novo-post" [formGroup]="form" action="javascript:void(0)">
       <input type="text" name="title" formControlName="title" placeholder="título">
-      <input type="text" name="content" formControlName="content" placeholder="texto">
+
+      <editor name="content" formControlName="content" apiKey="akdv6tedbfr7phl82c0bkcnj4mt6s3b1xfav3lx4gtrj5zza"
+      initialValue="Digite o conteúdo do Post..."
+      [init]="{plugins: 'lists link table code help wordcount'}">
+      </editor>
+
       <input type="text" name="tag" formControlName="tag" placeholder="tags">
-      <input type="text" name="linkImage" formControlName="linkImage" placeholder="Link da imagem">
+      <input type="text" name="imageLink" formControlName="imageLink" placeholder="Link da imagem">
 
-      <button [disabled]="!form.valid" type="submit">Enviar</button>
+      <div class="botoes-form">
+        <button class="btn-create" [disabled]="!form.valid" (click)="enviarPost()" type="submit">Enviar</button>
+        <button class="btn-delete" (click)="cancelarEnvio()" type="submit">Voltar</button>
+      </div>
     </form>
-
   </div>
 </section>

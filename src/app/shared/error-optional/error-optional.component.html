@@ -1,0 +1,12 @@
+<div class="component-pop-up-erro">
+  <h1 mat-dialog-title>CONFIRMAR REMOÇÃO DO POST</h1>
+
+  <mat-dialog-content>
+    {{data}}
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button class="btn-confirm" (click)="confirmaDelete(true)" [mat-dialog-close]="true" cdkFocusInitial>Confirmar</button>
+    <button class="btn-delete" (click)="confirmaDelete(false)" mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+</div>

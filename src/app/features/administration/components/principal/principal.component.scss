@@ -29,22 +29,3 @@ ol li p{
 ol li p:nth-of-type(1){
   text-align: left;
 }
-
-.btn-modify,.btn-delete{
-  cursor: pointer;
-  font-size: 16px;
-  font-family: "Coda";
-  margin-left: 1%;
-  border: 1px solid #1e1e1e;
-  border-radius: 4px;
-  background-color: #ccc;
-}
-.btn-modify:hover{
-  background-color: #3a4655;
-  color: rgb(22, 123, 218);
-}
-.btn-delete:hover{
-  background-color: #3a4655;
-  color: rgb(240, 10, 10);
-}
-

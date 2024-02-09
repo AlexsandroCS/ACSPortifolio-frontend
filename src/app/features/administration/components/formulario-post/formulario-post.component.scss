@@ -21,17 +21,11 @@
   color: #1e1e1e;
 }
 
-.form-novo-post button{
+.botoes-form{
+  display: inline-flex;
   margin: 0 auto;
   cursor: pointer;
   font-size: 16px;
   font-family: "Coda";
-  border: 1px solid #1e1e1e;
-  border-radius: 4px;
-  background-color: #ccc;
-}
-
-.form-novo-post button:hover{
-  background-color: #3a4655;
-  color: rgb(22, 123, 218);
+  border-radius: 2px;
 }

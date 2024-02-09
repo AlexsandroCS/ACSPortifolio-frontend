@@ -10,13 +10,14 @@
         <p>Ações</p>
       </li>
 
+
       @for (post of listPost$ | async; track post.id) {
       <li>
         <p>{{ post.title }}</p>
         <p>{{ post.date | transformDate}}</p>
         <p>
-          <button class="btn-modify">Alterar</button>
-          <button class="btn-delete">Excluir</button>
+          <button class="btn-modify" (click)="alterarPost(post)">Alterar</button>
+          <button class="btn-delete" (click)="deletarPost(post)">Excluir</button>
         </p>
       </li>
       }@empty {

@@ -131,3 +131,59 @@ section{
   font-weight: 600;
   margin-bottom: 0;
 }
+
+// botões
+
+.btn-modify,.btn-delete,.btn-create,.btn-confirm{
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Coda";
+  margin-left: 1%;
+  border-radius: 2px;
+  color: #fff;
+}
+.btn-create,.btn-confirm{
+  background-color: #07c717;
+  border: 2px solid #089632;
+}
+.btn-modify{
+  background-color: #007acc;
+  border: 2px solid #0669ac;
+}
+.btn-delete{
+  background-color: #d21313;
+  border: 2px solid #af0d0d;
+}
+.btn-create:hover, .btn-confirm:hover{
+  background-color: #3a4655;
+  color: #089632;
+}
+.btn-modify:hover{
+  background-color: #3a4655;
+  color: #0669ac;
+}
+.btn-delete:hover{
+  background-color: #3a4655;
+  color: #af0d0d;
+}
+
+// pop-up de erro
+.component-pop-up-erro{
+  width: 500px;
+  height: auto;
+  padding: 10px;
+  font-family: "Coda";
+}
+.component-pop-up-erro h1{
+  text-align: center;
+  font-weight: bold;
+  font-size: 32px;
+}
+.component-pop-up-erro mat-dialog-content{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.component-pop-up-erro mat-dialog-actions{
+  justify-content: center;
+}
