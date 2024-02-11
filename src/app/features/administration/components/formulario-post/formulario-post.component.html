@@ -8,8 +8,9 @@
       <input type="text" name="title" formControlName="title" placeholder="título">
 
       <editor name="content" formControlName="content" apiKey="akdv6tedbfr7phl82c0bkcnj4mt6s3b1xfav3lx4gtrj5zza"
+
       initialValue="Digite o conteúdo do Post..."
-      [init]="{plugins: 'lists link table code help wordcount'}">
+      [init]="{plugins: 'lists link table code help wordcount', entity_encoding: 'raw'}">
       </editor>
 
       <input type="text" name="tag" formControlName="tag" placeholder="tags">

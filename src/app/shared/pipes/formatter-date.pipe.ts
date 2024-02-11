@@ -9,6 +9,6 @@ export class formatterDatePipe implements PipeTransform {
 
   transform(date: string): string {
       const dataOriginal = parseISO(date);
-      return format(dataOriginal,"dd/MM/yyyy HH:mm");
+      return format(dataOriginal,"dd/MM/yyyy - HH:mm");
   }
 }
