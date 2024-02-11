@@ -1,0 +1,27 @@
+<div class="form-login">
+  <form action="javascript:void(0)">
+
+    <h2>ENTRAR</h2>
+
+    <div class="box-email">
+      <span class="icons material-symbols-outlined">mail</span>
+      <input type="text" placeholder="E-mail">
+    </div>
+
+    <div class="box-senha">
+      <span class="icons material-symbols-outlined">password</span>
+      <input [type]="password?'password':'text'" placeholder="Senha">
+      <span (click)="toggleSenha()">
+        @if (senha){
+          <span class="visibility material-symbols-outlined">visibility</span>
+        }
+        @else{
+          <span class="visibility material-symbols-outlined">visibility_off</span>
+        }
+      </span>
+    </div>
+
+    <button class="btn-logar">Entrar</button>
+
+  </form>
+</div>

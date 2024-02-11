@@ -11,5 +11,9 @@ export const APP_ROUTES: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./features/administration/administration.routes').then(m => m.ROUTE_ADMIN)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./features/login/login.routes').then(m => m.ROUTE_LOGIN)
   }
 ];
