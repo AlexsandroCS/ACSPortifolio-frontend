@@ -2,6 +2,15 @@
   display: grid;
   width: 50%;
   margin: 0 auto;
+  height: auto;
+}
+
+.form-novo-post label{
+  margin: 4% 0 0 1%;
+  font-size: 14px;
+  font-family: "Coda";
+  font-weight: bold;
+  color: #3a4655;
 }
 
 .form-novo-post input{
@@ -28,4 +37,13 @@
   font-size: 16px;
   font-family: "Coda";
   border-radius: 2px;
+  padding: 2%;
+}
+
+.form-novo-post select{
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: 98.4%;
+  padding: 10px;
+  margin: 0 auto;
 }

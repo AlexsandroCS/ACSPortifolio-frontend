@@ -14,12 +14,14 @@
 
         <div class="assunto-postagem">
           <p>Tag:</p>
-          <span>{{post.tag}}</span>
+          @for (item of configuraTag(post.tag); track item) {
+            <span>{{configuraTag(item)}}</span>
+          }
         </div>
 
         <div class="data-postagem">
           <p>Data:</p>
-          <span>{{post.date | transformDate }}</span>
+          <span>{{post.date | transformDate}}</span>
         </div>
 
         <div class="spoiler-postagem">

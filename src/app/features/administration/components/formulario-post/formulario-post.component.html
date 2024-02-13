@@ -5,16 +5,21 @@
     </div>
 
     <form class="form-novo-post" [formGroup]="form" action="javascript:void(0)">
-      <input type="text" name="title" formControlName="title" placeholder="título">
+      <label for="title">Coloque o título do post</label>
+      <input type="text" name="title" formControlName="title" placeholder="Exemplo: Estrutura de repetição em Java">
 
+      <label for="content">Coloque o conteúdo do post</label>
       <editor name="content" formControlName="content" apiKey="akdv6tedbfr7phl82c0bkcnj4mt6s3b1xfav3lx4gtrj5zza"
 
       initialValue="Digite o conteúdo do Post..."
       [init]="{plugins: 'lists link table code help wordcount', entity_encoding: 'raw'}">
       </editor>
 
-      <input type="text" name="tag" formControlName="tag" placeholder="tags">
-      <input type="text" name="imageLink" formControlName="imageLink" placeholder="Link da imagem">
+      <label for="tag-opcional">Adicione as tags do post</label>
+      <input type="text" name="tag" formControlName="tag" placeholder="Exemplo: Lógica de programação em Java, Programação, Computação, etc ...">
+
+      <label for="imageLink">Coloque o link de uma imagem</label>
+      <input type="text" name="imageLink" formControlName="imageLink" placeholder="Exemplo: https://blog.geekhunter.com.br/wp-content/uploads/2018/04/java-860x418.png">
 
       <div class="botoes-form">
         <button class="btn-create" [disabled]="!form.valid" (click)="enviarPost()" type="submit">Enviar</button>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { ServicesService } from '../../../../shared/services/services.service';
 import { ActivatedRoute } from '@angular/router';
@@ -23,13 +23,14 @@ export class FormularioPostComponent {
   // 1 - Após criar um formulário precisamos fazer a injeção de dependências do FormBuilder
   constructor(private fb: FormBuilder, public servicePost: ServicesService, private location: Location, private rotaAtual: ActivatedRoute, private snackBar: MatSnackBar){
     // 2 - Vamos passar o método group do FormBuilder para um novo "form"
+
     this.form = this.fb.group({
-      // 3 - Passando os names dos campos do formulário.
+      // 3 - atributos do meu objeto Post.
       id: [],
       title: ['', Validators.required], // 4 - Validators.required faz a verificação se o campo é vazio, caso seja vazio ele retorna um objeto de erro.
       content: ['', Validators.required],
       tag: ['', Validators.required],
-      imageLink: ['', Validators.required]
+      imageLink: ['', Validators.required],
     })
 
     const post: Post = this.rotaAtual.snapshot.data['postagem'];
@@ -63,5 +64,4 @@ export class FormularioPostComponent {
   private erroEnvio(){
     this.snackBar.open('Erro ao salvar Post!', 'OK', {duration: 5000});
   }
-
 }

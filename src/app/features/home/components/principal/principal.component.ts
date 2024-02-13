@@ -40,4 +40,9 @@ export class PrincipalComponent {
     const regex = /<[^>]*>/g;
     return texto.replace(regex,"");
   }
+
+  configuraTag(texto: string): string[]{
+    const listaTag = texto.split(", ");
+    return listaTag;
+  }
 }
