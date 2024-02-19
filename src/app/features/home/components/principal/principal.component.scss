@@ -23,31 +23,25 @@ section{
     "image tag tag tag"
     "image data data data"
     "image texto texto texto";
+  justify-content: start;
   border-bottom: 5px solid #e4e4e4;
 }
 
 // Image
 .image-postagem{
   grid-area: image;
-  width: 155px;
-  height: 182px;
+  width: 220px;
+  height: 180px;
 }
 .image-postagem img{
   width: 100%;
   height: 100%;
   border-radius: 4px;
-
 }
 
 // titulo
 .titulo-postagem{
   grid-area: titulo;
-}
-.titulo-postagem p{
-  font-family: 'Alata', sans-serif;
-  font-size: 32px;
-  font-weight: 600;
-  margin: 0 0 0 5px;
 }
 
 // tag
@@ -61,36 +55,6 @@ section{
   justify-self: start;
 }
 
-// tag e data
-.assunto-postagem p, .data-postagem p{
-  display: inline;
-  font-family: "Coda";
-  font-size: 18px;
-  font-weight: 900;
-  color: #808080;
-  margin: 0 0 0 10px;
-}
-
-.assunto-postagem span{
-  font-family: 'Alata', sans-serif;
-  font-size: 11px;
-  font-weight: 900;
-  background-color: #e67c3c;
-  border-radius: 3px;
-  color: #fff;
-  margin: 0 0 0 5px;
-  padding: 2px;
-}
-
-.data-postagem span{
-  font-family: "Coda";
-  font-size: 18px;
-  font-weight: 900;
-  border-radius: 3px;
-  color: #1e1e1e;
-  margin: 0 0 0 5px;
-  padding: 2px;
-}
 
 // texto
 .spoiler-postagem{

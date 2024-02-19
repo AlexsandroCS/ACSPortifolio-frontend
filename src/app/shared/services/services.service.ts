@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from '../model/post';
+import { Login } from '../model/login';
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +44,4 @@ export class ServicesService {
   deletaPost(idPost: string){
     return this.http.delete(`${this.API}/${idPost}`);
   }
-
 }

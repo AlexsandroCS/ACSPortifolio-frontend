@@ -2,9 +2,6 @@ import { Routes } from '@angular/router';
 
 export const APP_ROUTES: Routes = [
   {
-    path: '', pathMatch: 'full', redirectTo: ''
-  },
-  {
     path: '',
     loadChildren: () => import('./features/home/home.routes').then(m => m.ROUTE_HOME)
   },
