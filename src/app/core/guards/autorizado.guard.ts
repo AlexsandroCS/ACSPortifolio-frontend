@@ -7,6 +7,8 @@ export const autorizadoGuard: CanActivateFn = (route, state, login: LoginService
   if(login.autenticaToken()){
     return true;
   }
-  rota.navigate(['/login']);
-  return false;
+  else{
+    rota.navigate(['/login']);
+    return false;
+  }
 };

@@ -1,5 +1,5 @@
 <div class="form-login">
-  <form [formGroup]="formLogin" (ngSubmit)="enviarLogin()">
+  <form [formGroup]="formLogin">
 
     <h2>ENTRAR</h2>
 
@@ -21,7 +21,7 @@
       </span>
     </div>
 
-    <button type="submit" class="btn-logar">Entrar</button>
+    <button type="submit" class="btn-logar" (click)="enviarLogin()">Entrar</button>
 
   </form>
 </div>

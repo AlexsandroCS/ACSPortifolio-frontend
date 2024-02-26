@@ -1,36 +1,28 @@
 <section>
   <div class="informacoes-post">
     <div class="post-titulo">
-      <p>Título da postagem</p>
+      <p>{{postagem?.title}}</p>
     </div>
 
     <div class="post-tag">
       <p>Tags:</p>
-      <span>Programação</span>
-      <span>Lógica de programação</span>
-      <span>Java</span>
+        @for (tag of configuraTag(postagem!.tag); track tag) {
+          <span>{{configuraTag(tag)}}</span>
+        }
     </div>
 
     <div class="post-datetime">
       <p>Data:</p>
-      <span>13/13/2013 - 13:13</span>
+      <span>{{postagem!.date | transformDate}}</span>
     </div>
   </div>
 
+
+  <!-- Precisamos passar valores HTML do banco de dados para o texto-post no HTML através da interpolação -->
+
   <div class="conteudo-post">
     <div class="texto-post">
-      <h1 data-sourcepos="3:1-3:56"><strong>Capítulo 1: Apresentação do Xiru.</strong></h1>
-      <p data-sourcepos="3:1-3:56"><br>O sol mal raiou no horizonte e o Xiru Abagualado já tava de pé, ligeirinho como um sagui. Enfiou o pé no botina surrada, abotoou a camisa xadrez e partiu pro terreiro, onde a lida o esperava.</p>
-      <p data-sourcepos="5:1-5:80">Com um sorriso no rosto e um verso na ponta da língua, ele tratou de dar o milho pras galinhas, botar água nos bezerros e tirar o leite da vaca malhada. O cheiro do café quentinho se misturava com o mugido do gado e o canto dos passarinhos, criando uma sinfonia da vida no campo.</p>
-      <p data-sourcepos="7:1-7:286">Depois do café reforçado, com pão de queijo e torresmo, o Xiru montou no seu cavalo pangaré e partiu pra roça. O dia tava quente, mas ele não se intimidava. Com o chapéu de palha na cabeça e a enxada na mão, ele enfrentava o sol e a terra, cantando moda de viola pra espantar o cansaço.</p>
-      <p data-sourcepos="9:1-9:98">Na volta pra casa, o Xiru ainda deu uma parada no bar da Dona Florinda pra tomar uma pinga e prosear com os amigos. A conversa era animada, com risadas e causos da vida no interior.</p>
-      <p data-sourcepos="11:1-11:203">Ao cair da noite, ele tava de volta ao lar, cansado mas feliz. A lua prateada iluminava o terreiro e o Xiru, com o corpo dolorido mas a alma leve, se aconchegou na varanda pra apreciar a beleza da noite.</p>
-      <p data-sourcepos="13:1-13:184">Enquanto a lua ia subindo no céu, ele refletia sobre o dia que passou, as alegrias e os desafios da vida no campo. Era uma vida simples, dura, mas também cheia de beleza e significado.</p>
-      <p data-sourcepos="15:1-15:294">O Xiru Abagualado era um homem simples, de fé e de trabalho. Ele vivia em harmonia com a natureza e com os animais, e tinha um profundo amor pela sua terra. A sua sabedoria caipira e o seu jeito de falar divertido eram a marca registrada de um homem que vivia a vida com alegria e simplicidade.</p>
-      <p data-sourcepos="17:1-17:201">As histórias do Xiru Abagualado são um retrato da cultura caipira, com seus costumes, valores e tradições. São histórias que nos ensinam sobre a importância da família, da amizade, do trabalho e da fé.</p>
-      <p data-sourcepos="19:1-19:37">Elas nos lembram que a felicidade não está nas coisas materiais, mas sim nos pequenos momentos da vida, nas coisas simples que nos rodeiam.</p>
-      <p data-sourcepos="21:1-21:187">O Xiru Abagualado é um exemplo de que é possível viver uma vida feliz e plena com pouco. Ele nos ensina a valorizar as coisas simples da vida e a encontrar a felicidade naquilo que temos.</p>
-      <p data-sourcepos="23:1-23:114">As suas histórias são um presente para todos nós, que nos inspiram a viver a vida com mais alegria e simplicidade.</p>
+      {{postagem?.content}}
     </div>
   </div>
 </section>

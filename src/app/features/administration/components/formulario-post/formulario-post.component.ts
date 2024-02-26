@@ -27,10 +27,10 @@ export class FormularioPostComponent {
     this.form = this.fb.group({
       // 3 - atributos do meu objeto Post.
       id: [],
-      title: ['', Validators.required], // 4 - Validators.required faz a verificação se o campo é vazio, caso seja vazio ele retorna um objeto de erro.
-      content: ['', Validators.required],
-      tag: ['', Validators.required],
-      imageLink: ['', Validators.required],
+      title: ['', [Validators.required]], // 4 - Validators.required faz a verificação se o campo é vazio, caso seja vazio ele retorna um objeto de erro.
+      content: ['', [Validators.required]],
+      tag: ['', [Validators.required]],
+      imageLink: ['', [Validators.required]],
     })
 
     const post: Post = this.rotaAtual.snapshot.data['postagem'];

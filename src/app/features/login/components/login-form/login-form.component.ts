@@ -19,30 +19,28 @@ export class LoginFormComponent {
   formLogin: FormGroup;
 
   constructor(private formBuilder: FormBuilder, public login: LoginService, private snackBar: MatSnackBar, private location: Location){
-
+    this.verificaLogin();
 
     this.formLogin = this.formBuilder.group({
-      email: [''],
-      password: [''],
+      email: ['', [Validators.required, Validators.email, Validators.minLength(13)]],
+      password: ['', [Validators.required, Validators.minLength(2)]],
     });
-
-    this.verificaLogin();
 
   }
 
   // Enviando dados do formulário para autenticação.
   enviarLogin(){
-    this.login.login(this.formLogin.value);
+    if(this.formLogin.valid){
+      this.login.login(this.formLogin.value);
+    }
   }
 
   // verifica autenticação do login.
   verificaLogin(){
-    if(this.login.autenticaToken()){
-      console.log("Você já está logado!");
-      window.location.href = '/admin';
-    }
-    else{
-      this.enviarLogin();
+    if(localStorage.getItem("token_login")){
+      if(this.login.autenticaToken()){
+        window.location.href = '/admin';
+      }
     }
   }
 
