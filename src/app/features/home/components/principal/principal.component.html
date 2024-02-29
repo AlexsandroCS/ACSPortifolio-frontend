@@ -2,66 +2,37 @@
   <core-nav></core-nav>
 
   <div class="post-projects">
-    <div class="bloco-postagem">
-      <div class="image-postagem">
-        <img src="../../../assets/images/Kayn.png" alt="">
-      </div>
+    @for (post of listPostPrincipal$ | async; track post.id) {
+      <div class="bloco-postagem">
+        <div class="image-postagem">
+          <img src="{{post.imageLink}}" alt="">
+        </div>
 
-      <div class="titulo-postagem">
-        <p>O coringa mata sorrindo e o urso mata abraçando!</p>
-      </div>
+        <div class="titulo-postagem">
+          <p>
+            <a href="project/{{post.id}}">{{post.title}}</a>
+          </p>
+        </div>
 
-      <div class="assunto-postagem">
-        <p>Tag:</p>
-        <span>Gato</span>
-        <span>Kayn</span>
-        <span>Banho</span>
-        <span>Indignado</span>
-        <span>Só deus sabe como tá a mente do palhaço</span>
-      </div>
+        <div class="assunto-postagem">
+          <p>Tag:</p>
+          @for (item of configuraTag(post.tag); track item) {
+            <span>{{configuraTag(item)}}</span>
+          }
+        </div>
 
-      <div class="data-postagem">
-        <p>Data:</p>
-        <span>27/Janeiro/2024 - 13:42</span>
-      </div>
+        <div class="data-postagem">
+          <p>Data:</p>
+          <span>{{post.date | transformDate}}</span>
+        </div>
 
-      <div class="spoiler-postagem">
-        <p>Kayn, um gato cinza e preto de olhos verdes, estava sendo lavado pelo seu dono, Gustavo. Ele odiava banhos. Para ele, era a pior experiência do mundo.
-        "Por que você está me fazendo isso?", ele pensou. "Eu estou perfeitamente limpo! Por que você precisa me molhar e me ensaboar?"
-        Kayn se esforçava para se libertar, mas Gustavo era mais forte que ele. Ela o segurava firmemente enquanto o lavava com um shampoo especial para gatos.
-        "Eu vou te deixar fedido!", Kayn gritou. "Você vai se arrepender disso!"</p><span> ver mais ...</span>
+        <div class="spoiler-postagem">
+          <p>{{removeTagsHtml(post.content)}}</p>
+          <a href="project/{{post.id}}">
+            <span> ver mais ...</span>
+          </a>
+        </div>
       </div>
-    </div>
-
-    <div class="bloco-postagem">
-      <div class="image-postagem">
-        <img src="../../../assets/images/Kayn.jpg" alt="">
-      </div>
-
-      <div class="titulo-postagem">
-        <p>O coringa mata sorrindo e o urso mata abraçando!</p>
-      </div>
-
-      <div class="assunto-postagem">
-        <p>Tag:</p>
-        <span>Gato</span>
-        <span>Kayn</span>
-        <span>Banho</span>
-        <span>Indignado</span>
-        <span>Só deus sabe como tá a mente do palhaço</span>
-      </div>
-
-      <div class="data-postagem">
-        <p>Data:</p>
-        <span>27/Janeiro/2024 - 13:42</span>
-      </div>
-
-      <div class="spoiler-postagem">
-        <p>Kayn, um gato cinza e preto de olhos verdes, estava sendo lavado pelo seu dono, Gustavo. Ele odiava banhos. Para ele, era a pior experiência do mundo.
-        "Por que você está me fazendo isso?", ele pensou. "Eu estou perfeitamente limpo! Por que você precisa me molhar e me ensaboar?"
-        Kayn se esforçava para se libertar, mas Gustavo era mais forte que ele. Ela o segurava firmemente enquanto o lavava com um shampoo especial para gatos.
-        "Eu vou te deixar fedido!", Kayn gritou. "Você vai se arrepender disso!"</p><span> ver mais ...</span>
-      </div>
-    </div>
+    }
   </div>
 </section>

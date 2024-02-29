@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
-import { HomeComponent } from "./home.component";
 import { HomePrincipalComponent } from "./containers/home-principal/home-principal.component";
 import { SobreComponent } from "./containers/sobre/sobre.component";
+import { postResolver } from "../../core/guards/post.resolver";
 
 export const ROUTE_HOME: Routes = [
   {
@@ -10,8 +10,9 @@ export const ROUTE_HOME: Routes = [
     title: 'AlexsandroCS - Portifólio / Blog'
   },
   {
-    path: 'project',
+    path: 'project/:id',
     component: SobreComponent,
+    resolve: {capturaPost: postResolver},
     title: 'AlexsandroCS - Sobre'
   }
 ];

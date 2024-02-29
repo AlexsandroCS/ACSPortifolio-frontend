@@ -23,12 +23,12 @@ export class ServicesService {
 
   // Salvando um novo post.
   criarPost(form: Partial<Post>){
-    return this.http.post<Post>(this.API, form);
+    return this.http.post<Post>(this.API, form, this.enviandoToken());
   }
 
   // Editando um post existente.
   alterarPost(form: Partial<Post>){
-    return this.http.put<Post>(`${this.API}/${form.id}`, form);
+    return this.http.put<Post>(`${this.API}/${form.id}`, form, this.enviandoToken());
   }
 
   // Método que distingue o salvar do editar.
@@ -41,7 +41,24 @@ export class ServicesService {
 
   // Deletando um post.
   deletaPost(idPost: string){
-    return this.http.delete(`${this.API}/${idPost}`);
+    return this.http.delete(`${this.API}/${idPost}`, this.enviandoToken());
   }
 
+  // Conectando Token com a header da API.
+  enviandoToken(){
+    const anToken = localStorage.getItem('token_login');
+
+    if (!anToken) {
+      throw new Error('Token não encontrado no localStorage!');
+    }
+
+    const headersCommunication = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${anToken}`
+    });
+
+    const requestOptions = {headers: headersCommunication}
+
+    return requestOptions;
+  }
 }

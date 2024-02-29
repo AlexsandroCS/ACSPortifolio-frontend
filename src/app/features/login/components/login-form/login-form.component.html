@@ -1,18 +1,18 @@
 <div class="form-login">
-  <form action="javascript:void(0)">
+  <form [formGroup]="formLogin">
 
     <h2>ENTRAR</h2>
 
     <div class="box-email">
-      <span class="icons material-symbols-outlined">mail</span>
-      <input type="text" placeholder="E-mail">
+      <span class="icons material-symbols-outlined">email</span>
+      <input type="text" placeholder="E-mail" formControlName="email">
     </div>
 
     <div class="box-senha">
       <span class="icons material-symbols-outlined">password</span>
-      <input [type]="password?'password':'text'" placeholder="Senha">
+      <input [type]="passwordInput?'password':'text'" placeholder="Senha" formControlName="password">
       <span (click)="toggleSenha()">
-        @if (senha){
+        @if (senhaInput){
           <span class="visibility material-symbols-outlined">visibility</span>
         }
         @else{
@@ -21,7 +21,7 @@
       </span>
     </div>
 
-    <button class="btn-logar">Entrar</button>
+    <button type="submit" class="btn-logar" (click)="enviarLogin()">Entrar</button>
 
   </form>
 </div>

@@ -1,1 +1,24 @@
-<p>project works!</p>
+<section>
+  <div class="informacoes-post">
+    <div class="post-titulo">
+      <p>{{postagem.title}}</p>
+    </div>
+
+    <div class="post-tag">
+      <p>Tags:</p>
+      @for (item of listaTagPostagem; track item) {
+        <span>{{item}}</span>
+      }
+    </div>
+
+    <div class="post-datetime">
+      <p>Data:</p>
+      <span>{{postagem.date | transformDate}}</span>
+    </div>
+  </div>
+
+  <div class="conteudo-post">
+    <div class="texto-post" [innerHTML]="contentPostagem"></div>
+  </div>
+</section>
+
