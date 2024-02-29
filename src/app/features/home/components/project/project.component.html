@@ -1,18 +1,29 @@
 <section>
   <div class="informacoes-post">
     <div class="post-titulo">
+<<<<<<< HEAD
       <p>{{postagem.title}}</p>
+=======
+      <p>{{postagem?.title}}</p>
+>>>>>>> origin/main
     </div>
 
     <div class="post-tag">
       <p>Tags:</p>
+<<<<<<< HEAD
       @for (item of listaTagPostagem; track item) {
         <span>{{item}}</span>
       }
+=======
+        @for (tag of configuraTag(postagem!.tag); track tag) {
+          <span>{{configuraTag(tag)}}</span>
+        }
+>>>>>>> origin/main
     </div>
 
     <div class="post-datetime">
       <p>Data:</p>
+<<<<<<< HEAD
       <span>{{postagem.date | transformDate}}</span>
     </div>
   </div>
@@ -22,3 +33,18 @@
   </div>
 </section>
 
+=======
+      <span>{{postagem!.date | transformDate}}</span>
+    </div>
+  </div>
+
+
+  <!-- Precisamos passar valores HTML do banco de dados para o texto-post no HTML através da interpolação -->
+
+  <div class="conteudo-post">
+    <div class="texto-post">
+      {{postagem?.content}}
+    </div>
+  </div>
+</section>
+>>>>>>> origin/main
