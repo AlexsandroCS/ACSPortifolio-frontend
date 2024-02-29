@@ -30,8 +30,8 @@ section{
 // Image
 .image-postagem{
   grid-area: image;
-  width: 155px;
-  height: 182px;
+  width: 245px;
+  height: 180px;
 }
 .image-postagem img{
   width: 100%;
@@ -43,11 +43,15 @@ section{
 .titulo-postagem{
   grid-area: titulo;
 }
-.titulo-postagem p{
-  font-family: 'Alata', sans-serif;
-  font-size: 32px;
-  font-weight: 600;
-  margin: 0 0 0 5px;
+
+.titulo-postagem a{
+  color: #3a4655;
+  text-decoration: none;
+}
+
+.titulo-postagem a:hover{
+  color: #1e1e1e;
+  text-decoration: underline;
 }
 
 // tag
