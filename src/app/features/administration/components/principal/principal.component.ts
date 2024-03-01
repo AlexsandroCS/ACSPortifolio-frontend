@@ -35,8 +35,8 @@ export class PrincipalComponent {
   }
 
   // Editando post.
-  alterarPost(idPost: Post){
-    this.router.navigate(['editar-post',idPost.id], {relativeTo: this.rotaAtual});
+  alterarPost(titlePost: Post){
+    this.router.navigate(['editar-post',titlePost.title], {relativeTo: this.rotaAtual});
   }
 
   // Deletando post.

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from '../model/post';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,13 @@ export class ServicesService {
   }
 
   // Capturrando post específico.
-  capturaPostUnico(idPost: number){
-    return this.http.get<Post>(`${this.API}/${idPost}`)
+  capturaPostUnico(titlePost: String){
+    return this.http.get<Post>(`${this.API}/${titlePost}`);
+    // Aplicando o regex.
+    // .pipe(map((capturaPost: Post) => {
+    //   const capturaTituloEditado = this.transformarTitulo(capturaPost.title);
+    //   return {...capturaPost, title: capturaTituloEditado}
+    // }));
   }
 
   // Salvando um novo post.
@@ -60,5 +66,13 @@ export class ServicesService {
     const requestOptions = {headers: headersCommunication}
 
     return requestOptions;
+  }
+
+  // Regex
+  public transformarTitulo(title: string): string {
+    // Substituir caracteres especiais e espaços por "-"
+    const tituloTransformado = title.replace(/[^\w\s]/g, "-").replace(/\s+/g, "-");
+    // Remover caracteres especiais e espaços no final
+    return tituloTransformado.replace(/[^\w\s]$/, "").replace(/\s+$/, "");
   }
 }

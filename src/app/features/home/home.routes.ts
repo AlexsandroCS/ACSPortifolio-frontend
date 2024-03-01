@@ -10,9 +10,9 @@ export const ROUTE_HOME: Routes = [
     title: 'AlexsandroCS - Portifólio / Blog'
   },
   {
-    path: 'project/:id',
+    path: 'project/:title',
     component: SobreComponent,
     resolve: {capturaPost: postResolver},
-    title: 'AlexsandroCS - Sobre'
+    title: 'AlexsandroCS - Post'
   }
 ];

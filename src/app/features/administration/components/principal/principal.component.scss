@@ -29,3 +29,12 @@ ol li p{
 ol li p:nth-of-type(1){
   text-align: left;
 }
+
+ol li p a{
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+ol li p a:hover{
+  color: #3a4655;
+}

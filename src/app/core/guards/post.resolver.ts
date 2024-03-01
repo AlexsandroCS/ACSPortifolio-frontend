@@ -6,8 +6,8 @@ import { Observable, of } from 'rxjs';
 
 export const postResolver: ResolveFn<Observable<Post>> = (route, state, service: ServicesService = inject(ServicesService)) => {
 
-  if(route.params && route.params['id']){
-    return service.capturaPostUnico(route.params['id']);
+  if(route.params && route.params['title']){
+    return service.capturaPostUnico(route.params['title']);
   }
   return of({id: '', title:'', content:'', tag:'', imageLink:'', date:''});
 };

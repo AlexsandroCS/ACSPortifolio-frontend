@@ -19,12 +19,12 @@ export class ProjectComponent {
   contentPostagem: SafeHtml = ''
 
   constructor(private postService: ServicesService, private rotaAtual: ActivatedRoute, private sanitizer: DomSanitizer){
-    const capturaPostID = Number(this.rotaAtual.snapshot.paramMap.get('id'));
-    this.capturandoPost(capturaPostID)
+    const capturaPostID = this.rotaAtual.snapshot.paramMap.get('title');
+    this.capturandoPost(capturaPostID!)
   }
 
-  capturandoPost(idPost: number){
-    this.postService.capturaPostUnico(idPost).subscribe(
+  capturandoPost(titlePost: string){
+    this.postService.capturaPostUnico(titlePost).subscribe(
       (post) => {
         this.postagem = post;
         this.listaTagPostagem = this.postagem.tag.split(", ");

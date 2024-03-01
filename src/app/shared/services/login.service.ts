@@ -19,15 +19,18 @@ export class LoginService {
         this.rota.navigate(["/admin"]);
 
         const expiraToken = 60 * 60 * 4 * 1000; // 4 Horas para o token expirar.
-        setTimeout(() => {
-          localStorage.removeItem('token_login');
-
-        }, expiraToken);
+        this.timeToken(expiraToken);
       },
       (error: any) => {
         console.log("Token autenticador não foi gerado!")
       }
     );
+  }
+
+  private timeToken(expiraToken: number){
+    setTimeout(() => {
+      localStorage.removeItem('token_login');
+    }, expiraToken);
   }
 
   autenticaToken(){

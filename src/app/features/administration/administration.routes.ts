@@ -19,7 +19,7 @@ export const ROUTE_ADMIN: Routes = [
     title: 'Administração - Novo Post'
   },
   {
-    path: 'editar-post/:id',
+    path: 'editar-post/:title',
     component: FormAdminComponent,
     resolve: {postagem: postResolver},
     canActivate: [autorizadoGuard],
