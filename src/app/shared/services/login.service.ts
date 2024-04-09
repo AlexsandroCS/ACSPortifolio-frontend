@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Login } from '../model/login';
 import { Router } from '@angular/router';
 
@@ -29,11 +29,41 @@ export class LoginService {
 
   private timeToken(expiraToken: number){
     setTimeout(() => {
-      localStorage.removeItem('token_login');
+      localStorage.clear();
     }, expiraToken);
   }
 
-  autenticaToken(){
+  // Autenticação de Token com API
+  autenticaToken(capturaToken: string): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      if (capturaToken === null || capturaToken === '') {
+        resolve(false);
+        this.exit();
+      } else {
+        const headers = new HttpHeaders({
+          'Content-Type': 'application/json'
+        });
+
+        this.http.post(`${this.API}/validate`, { verificaToken: capturaToken }, { headers }).subscribe(
+          (response: any) => {
+
+            if(response.is_valid === false){
+              this.exit();
+            }else{
+              const trueResponse = response.is_valid;
+              return trueResponse;
+            }
+          },
+          (error: any) => {
+            reject(error);
+          }
+        );
+      }
+    });
+  }
+
+  // Autenticação meia boca só para testar
+  autenticaTokenFail(){
     if (localStorage.getItem("token_login") === null || localStorage.getItem("token_login") === ""){
       return false;
     }

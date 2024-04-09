@@ -6,21 +6,22 @@ import { formatterDatePipe } from '../../../../shared/pipes/formatter-date.pipe'
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-project',
+  selector: 'app-post',
   standalone: true,
   imports: [formatterDatePipe],
-  templateUrl: './project.component.html',
-  styleUrl: './project.component.scss'
+  templateUrl: './post.component.html',
+  styleUrl: './post.component.scss'
 })
-export class ProjectComponent {
+export class PostComponent {
 
   postagem: Post = {} as Post;
   listaTagPostagem: string[] = [];
   contentPostagem: SafeHtml = ''
 
   constructor(private postService: ServicesService, private rotaAtual: ActivatedRoute, private sanitizer: DomSanitizer){
-    const capturaPostID = this.rotaAtual.snapshot.paramMap.get('title');
-    this.capturandoPost(capturaPostID!)
+    const capturaPostTitle = this.rotaAtual.snapshot.paramMap.get('title');
+
+    this.capturandoPost(postService.configurandoTitleLinkAPI(capturaPostTitle!));
   }
 
   capturandoPost(titlePost: string){

@@ -41,12 +41,30 @@ body{
   padding: 0;
   background-color: #e4e4e4;
 }
-app-home-principal, app-sobre, root-home-admin, app-form-admin{
+app-home-principal, app-postagem{
   display: grid;
-  grid-template-columns: 14% auto;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+  "header header"
+  "section section"
+  "footer footer";
+}
+
+root-home-admin, app-form-admin{
+  display: grid;
+  grid-template-columns: 15% auto;
   grid-template-areas:
   "header header"
   "aside section"
+  "footer footer";
+}
+
+app-sobre{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+  "header header"
+  "section section"
   "footer footer";
 }
 
@@ -122,7 +140,14 @@ section{
   background-color: #3a4655;
   border-radius: 4px 4px 0 0;
 }
-.title-list-post p{
+.title-list-post-inicio{
+  width: 90%;
+  margin: 0 auto;
+  background-color: #3a4655;
+  border-radius: 4px 4px 0 0;
+}
+
+.title-list-post p, .title-list-post-inicio p{
   padding: 1%;
   color: #ccc;
   font-family: 'Alata', sans-serif;

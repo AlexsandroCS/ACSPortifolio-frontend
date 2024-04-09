@@ -1,9 +1,6 @@
-import { Login } from './../../../../shared/model/login';
 import { Component } from '@angular/core';
-import { ServicesService } from '../../../../shared/services/services.service';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { LoginService } from '../../../../shared/services/login.service';
 
@@ -36,9 +33,20 @@ export class LoginFormComponent {
   }
 
   // verifica autenticação do login.
+  /*
+  verificaLogin(){
+    const capturandoToken = localStorage.getItem("token_login");
+    this.login.autenticaToken(capturandoToken!).then((resultado) => {
+    }).catch((error) => {
+      console.error("Erro:", error);
+    });
+  }
+  */
+
+  // verifica autenticação do login.
   verificaLogin(){
     if(localStorage.getItem("token_login")){
-      if(this.login.autenticaToken()){
+      if(this.login.autenticaTokenFail()){
         window.location.href = '/admin';
       }
     }

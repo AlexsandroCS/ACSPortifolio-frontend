@@ -17,14 +17,9 @@ export class ServicesService {
     return this.http.get<Post[]>(this.API);
   }
 
-  // Capturrando post específico.
+  // Capturando post específico.
   capturaPostUnico(titlePost: String){
     return this.http.get<Post>(`${this.API}/${titlePost}`);
-    // Aplicando o regex.
-    // .pipe(map((capturaPost: Post) => {
-    //   const capturaTituloEditado = this.transformarTitulo(capturaPost.title);
-    //   return {...capturaPost, title: capturaTituloEditado}
-    // }));
   }
 
   // Salvando um novo post.
@@ -68,11 +63,10 @@ export class ServicesService {
     return requestOptions;
   }
 
-  // Regex
-  public transformarTitulo(title: string): string {
-    // Substituir caracteres especiais e espaços por "-"
-    const tituloTransformado = title.replace(/[^\w\s]/g, "-").replace(/\s+/g, "-");
-    // Remover caracteres especiais e espaços no final
-    return tituloTransformado.replace(/[^\w\s]$/, "").replace(/\s+$/, "");
+  public configurandoTitleLinkAPI(title: string): string{
+    const mudaTextOne = title.replace(/-/g, ' ');
+    const mudaTextTwo = mudaTextOne.replace(/sharp/g, '#');
+
+    return mudaTextTwo.toLowerCase();
   }
 }

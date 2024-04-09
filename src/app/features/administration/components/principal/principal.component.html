@@ -14,7 +14,7 @@
       @for (post of listPost$ | async; track post.id) {
       <li>
         <p>
-          <a href="project/{{post.title}}">{{ post.title }}</a>
+          <a href="post/{{post.title}}">{{ post.title }}</a>
         </p>
         <p>{{ post.date | transformDate}}</p>
         <p>

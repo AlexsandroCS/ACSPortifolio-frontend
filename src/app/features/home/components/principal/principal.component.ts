@@ -19,7 +19,7 @@ export class PrincipalComponent {
 
   listPostPrincipal$: Observable<Post[]> | null = null;
 
-  constructor(private postService: ServicesService, public dialog: MatDialog){
+  constructor(public postService: ServicesService, public dialog: MatDialog){
     this.capturaPostsPrincipais();
   }
 
@@ -44,5 +44,10 @@ export class PrincipalComponent {
   configuraTag(texto: string): string[]{
     const listaTag = texto.split(", ");
     return listaTag;
+  }
+
+  public configurandoTitleLinkSite(title: string): string{
+    const mudaText = title.replace(/ /g, '-');
+    return mudaText.toLowerCase();
   }
 }

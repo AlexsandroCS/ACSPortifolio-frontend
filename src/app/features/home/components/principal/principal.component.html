@@ -1,16 +1,18 @@
 <section>
-  <core-nav></core-nav>
+  <div class="title-list-post-inicio">
+    <p>Postagens</p>
+  </div>
 
   <div class="post-projects">
     @for (post of listPostPrincipal$ | async; track post.id) {
-      <div class="bloco-postagem">
+    <div class="bloco-postagem">
         <div class="image-postagem">
           <img src="{{post.imageLink}}" alt="">
         </div>
 
         <div class="titulo-postagem">
           <p>
-            <a href="project/{{post.title}}">{{post.title}}</a>
+            <a href="post/{{configurandoTitleLinkSite(post.title)}}">{{post.title}}</a>
           </p>
         </div>
 
@@ -28,7 +30,7 @@
 
         <div class="spoiler-postagem">
           <p>{{removeTagsHtml(post.content)}}</p>
-          <a href="project/{{post.title}}">
+          <a href="post/{{configurandoTitleLinkSite(post.title)}}">
             <span> ver mais ...</span>
           </a>
         </div>
