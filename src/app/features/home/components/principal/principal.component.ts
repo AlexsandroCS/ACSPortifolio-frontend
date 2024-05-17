@@ -4,9 +4,10 @@ import { ServicesService } from '../../../../shared/services/services.service';
 import { Post } from '../../../../shared/model/post';
 import { ErrorDialogComponent } from '../../../../shared/error-dialog/error-dialog.component';
 import { formatterDatePipe } from '../../../../shared/pipes/formatter-date.pipe';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable, catchError, interval, of, switchMap } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { PostPage } from '../../../../shared/model/post-page';
 
 @Component({
   selector: 'app-section',
@@ -23,13 +24,51 @@ export class PrincipalComponent {
     this.capturaPostsPrincipais();
   }
 
+  // capturaPostsPrincipais(){
+  //   this.listPostPrincipal$ = this.postService.listaPost().pipe(
+  //     catchError((error) => {
+  //       this.popupErro("Erro ao carregar posts!")
+  //       return of([])
+  //     })
+  //   );
+  // }
+
   capturaPostsPrincipais(){
-    this.listPostPrincipal$ = this.postService.listaPost().pipe(
-      catchError((error) => {
-        this.popupErro("Erro ao carregar posts!")
-        return of([])
-      })
-    );
+    const verificaStoragePost = localStorage.getItem("storagePost");
+
+    if (verificaStoragePost) {
+      // Se os dados já estiverem armazenados localmente, atribua-os à variável listPostPrincipal$
+      this.listPostPrincipal$ = of(JSON.parse(verificaStoragePost));
+    }
+    else {
+      // Se os dados não estiverem armazenados localmente, faça a requisição para obtê-los
+      this.listPostPrincipal$ = this.postService.listaPost().pipe(
+        switchMap(posts => {
+          // Salva os dados no localStorage
+          localStorage.setItem("storagePost", JSON.stringify(posts));
+          // Retorna os dados recebidos da requisição
+          return of(posts);
+        }),
+          catchError((error) => {
+            this.popupErro("Erro ao carregar posts!")
+            return of();
+         })
+      );
+    }
+
+    interval(120000).subscribe(() => {
+      this.postService.listaPost().subscribe(
+        (posts) => {
+          // Atualiza os dados na variável listPostPrincipal$
+          this.listPostPrincipal$ = of(posts);
+          // Salva os novos dados no localStorage
+          localStorage.setItem("storagePost", JSON.stringify(posts));
+        },
+        (error) => {
+          this.popupErro("Erro ao atualizar posts!");
+        }
+      );
+    });
   }
 
   popupErro(erro: string){
@@ -48,6 +87,7 @@ export class PrincipalComponent {
 
   public configurandoTitleLinkSite(title: string): string{
     const mudaText = title.replace(/ /g, '-');
-    return mudaText.toLowerCase();
+    const mudaTextTwo = mudaText.replace(/#/g, 'sharp');
+    return mudaTextTwo.toLowerCase();
   }
 }

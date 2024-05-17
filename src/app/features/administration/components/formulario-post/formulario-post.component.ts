@@ -36,7 +36,7 @@ export class FormularioPostComponent {
     const post: Post = this.rotaAtual.snapshot.data['postagem'];
     this.form.setValue({
       id: post.id,
-      title: post.title,
+      title: this.servicePost.configurandoTitleLinkAPI(post.title),
       content: post.content,
       tag: post.tag,
       imageLink: post.imageLink

@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from '../model/post';
 import { map } from 'rxjs';
+import { PostPage } from '../model/post-page';
 
 @Injectable({
   providedIn: 'root'
@@ -65,7 +66,7 @@ export class ServicesService {
 
   public configurandoTitleLinkAPI(title: string): string{
     const mudaTextOne = title.replace(/-/g, ' ');
-    const mudaTextTwo = mudaTextOne.replace(/sharp/g, '#');
+    const mudaTextTwo = mudaTextOne.replace(/#/g, 'sharp');
 
     return mudaTextTwo.toLowerCase();
   }

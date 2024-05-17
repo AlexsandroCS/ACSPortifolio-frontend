@@ -68,29 +68,6 @@ app-sobre{
   "footer footer";
 }
 
-@media (max-width: 1530px){
-  app-home-principal, root-home-admin, app-form-admin{
-    grid-template-columns: 18% auto;
-  }
-}
-
-@media (max-width: 1180px){
-  app-home-principal, root-home-admin, app-form-admin{
-    grid-template-columns: 22% auto;
-  }
-}
-
-@media (max-width: 970px){
-  app-home-principal, root-home-admin, app-form-admin{
-    grid-template-columns: 25% auto;
-  }
-}
-
-@media (max-width: 850px){
-  app-home-principal, root-home-admin, app-form-admin{
-    grid-template-columns: auto 70%;
-  }
-}
 
 @media (max-width: 705px){
   app-home-principal, root-home-admin, app-form-admin{
@@ -394,4 +371,13 @@ header{
   }
 }
 
+.conteudo-post img{
+  max-width: 100%;
+}
 
+body{
+  background-image: linear-gradient(0deg,transparent 24%,var(--stripedColor) 25%,var(--stripedColor) 26%,transparent 27%,transparent 74%,var(--stripedColor) 75%,var(--stripedColor) 76%,transparent 77%,transparent),linear-gradient(90deg,transparent 24%,var(--stripedColor) 25%,var(--stripedColor) 26%,transparent 27%,transparent 74%,var(--stripedColor) 75%,var(--stripedColor) 76%,transparent 77%,transparent);
+  background-size: 50px 50px;
+  background-color: #ececec;
+  --stripedColor: #3a465521;
+}

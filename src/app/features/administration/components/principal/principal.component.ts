@@ -29,7 +29,7 @@ export class PrincipalComponent {
     this.listPost$ = this.servicePost.listaPost().pipe(
       catchError(error => {
         this.popupErro("Erro ao carregar os Posts do site.")
-        return of([])
+        return of()
       })
     );
   }
