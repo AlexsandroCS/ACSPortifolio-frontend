@@ -1,7 +1,7 @@
 const PROXY_CONFIG = [
   {
     "/api": {
-       "target": "http://3.236.41.165:32769/",
+       "target": "http://44.223.75.61:32768/",
        "secure": false,
        "logLevel": "debug",
        "changeOrigin": true
