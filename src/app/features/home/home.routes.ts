@@ -12,12 +12,10 @@ export const ROUTE_HOME: Routes = [
   },
   {
     path: 'post/:title',
-    component: PostComponent,
-    title: 'AlexsandroCS - Post'
+    component: PostComponent
   },
   {
     path: 'sobre',
-    component: SobreComponent,
-    title: 'AlexsandroCS - Sobre'
+    component: SobreComponent
   }
 ];

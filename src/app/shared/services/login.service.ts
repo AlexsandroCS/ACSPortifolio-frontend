@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-  private readonly API = 'http://localhost:8080/api';
+  private readonly API = 'http://3.236.41.165:32769/api';
 
   constructor(private http: HttpClient, private rota: Router) { }
 

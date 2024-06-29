@@ -3,7 +3,7 @@ import { ServicesService } from '../../../../shared/services/services.service';
 import { Post } from '../../../../shared/model/post';
 import { ActivatedRoute } from '@angular/router';
 import { formatterDatePipe } from '../../../../shared/pipes/formatter-date.pipe';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post',
@@ -17,11 +17,14 @@ export class PostComponent {
   postagem: Post = {} as Post;
   listaTagPostagem: string[] = [];
   contentPostagem: SafeHtml = ''
+  titlePagina!: string;
 
-  constructor(private postService: ServicesService, private rotaAtual: ActivatedRoute, private sanitizer: DomSanitizer){
+  constructor(private postService: ServicesService, private rotaAtual: ActivatedRoute, private sanitizer: DomSanitizer, private titleService: Title){
     const capturaPostTitle = this.rotaAtual.snapshot.paramMap.get('title');
-
-    this.capturandoPost(postService.configurandoTitleLinkAPI(capturaPostTitle!));
+    this.titlePagina = this.rotaAtual.snapshot.paramMap.get('title')!;
+    const title = postService.configurandoTitleLinkAPI(capturaPostTitle!);
+    this.capturandoPost(title);
+    this.titleService.setTitle("AlexsandroCS | Blog | Post - " + title.charAt(0).toUpperCase() + title.slice(1));
   }
 
   capturandoPost(titlePost: string){

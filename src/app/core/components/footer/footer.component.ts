@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  @Input() email: string = '';
+  @Input() email: string = 'Alexsandro.ACS98@gmail.com';
 }

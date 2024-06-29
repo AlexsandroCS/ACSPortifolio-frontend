@@ -1,7 +1,10 @@
 .top-menu ol{
-  width: 80%;
   grid-template-columns: auto auto auto;
   display: grid;
   list-style: none;
   padding: 0;
+}
+.top-menu ol li a:hover{
+  text-decoration: underline;
+  color: #808080;
 }

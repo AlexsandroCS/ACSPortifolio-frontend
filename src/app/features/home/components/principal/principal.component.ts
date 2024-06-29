@@ -37,16 +37,12 @@ export class PrincipalComponent {
     const verificaStoragePost = localStorage.getItem("storagePost");
 
     if (verificaStoragePost) {
-      // Se os dados já estiverem armazenados localmente, atribua-os à variável listPostPrincipal$
       this.listPostPrincipal$ = of(JSON.parse(verificaStoragePost));
     }
     else {
-      // Se os dados não estiverem armazenados localmente, faça a requisição para obtê-los
       this.listPostPrincipal$ = this.postService.listaPost().pipe(
         switchMap(posts => {
-          // Salva os dados no localStorage
           localStorage.setItem("storagePost", JSON.stringify(posts));
-          // Retorna os dados recebidos da requisição
           return of(posts);
         }),
           catchError((error) => {
@@ -56,12 +52,11 @@ export class PrincipalComponent {
       );
     }
 
-    interval(120000).subscribe(() => {
+    // 300000 = 5 minutos.
+    interval(300000).subscribe(() => {
       this.postService.listaPost().subscribe(
         (posts) => {
-          // Atualiza os dados na variável listPostPrincipal$
           this.listPostPrincipal$ = of(posts);
-          // Salva os novos dados no localStorage
           localStorage.setItem("storagePost", JSON.stringify(posts));
         },
         (error) => {

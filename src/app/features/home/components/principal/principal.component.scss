@@ -17,8 +17,6 @@ section{
   height: 175px;
   padding: 1%;
   display: grid;
-  //grid-template-columns: 10% auto auto auto;
-  //grid-template-rows: 40px 30px 30px auto;
   grid-template-areas:
     "image titulo titulo titulo"
     "image tag tag tag"
@@ -27,6 +25,15 @@ section{
   justify-content: start;
   background-color: #fff;
   margin-bottom: 1%;
+  background-repeat: no-repeat;
+  transition: background 0.5s ease-in-out;
+  background: linear-gradient(to right, #fff 0%, #fff 50%, #ececec 50%, #ececec 100%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+}
+
+.bloco-postagem:hover{
+  background-position: right bottom;
 }
 
 // Image
@@ -106,7 +113,7 @@ section{
 }
 
 .spoiler-postagem p ,.spoiler-postagem span{
-  font-family: "Coda";
+  font-family: "Noto Kufi Arabic", sans-serif;
   font-size: 14px;
   border-radius: 3px;
   color: #424242;
@@ -118,7 +125,7 @@ section{
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
 }
 .spoiler-postagem span{
   color: #3a4655;

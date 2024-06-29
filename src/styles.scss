@@ -36,6 +36,7 @@ $ACSPortifolio-frontend-theme: mat.define-light-theme((
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
 body{
   margin: 0;
   padding: 0;
@@ -348,6 +349,9 @@ header{
   cursor: pointer;
   color: #808080;
 }
+.top-menu ol{
+  width: 80%;
+}
 
 @media (max-width: 900px){
   .top-site{
@@ -360,7 +364,7 @@ header{
     text-align: center;
   }
   .top-menu{
-    width: 90%;
+    width: 100%;
   }
   .top-menu ol{
     width: 100%;

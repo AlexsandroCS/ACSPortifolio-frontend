@@ -9,7 +9,7 @@ import { PostPage } from '../model/post-page';
 })
 export class ServicesService {
 
-  private readonly API = 'http://localhost:8080/api/post';
+  private readonly API = 'http://3.236.41.165:32769/api/post';
 
   constructor(private http: HttpClient) { }
 
