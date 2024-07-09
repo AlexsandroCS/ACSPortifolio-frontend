@@ -1,7 +1,7 @@
 const PROXY_CONFIG = [
   {
     "/api": {
-       "target": "http://44.223.75.61:32768/",
+       "target": "https://acsportifolio-backend.onrender.com/",
        "secure": false,
        "logLevel": "debug",
        "changeOrigin": true

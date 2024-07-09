@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-  private readonly API = 'http://44.223.75.61:32768/api';
+  private readonly API = 'https://acsportifolio-backend.onrender.com/api';
 
   constructor(private http: HttpClient, private rota: Router) { }
 

@@ -9,7 +9,7 @@ import { PostPage } from '../model/post-page';
 })
 export class ServicesService {
 
-  private readonly API = 'http://44.223.75.61:32768/api/post';
+  private readonly API = 'https://acsportifolio-backend.onrender.com/api/post';
 
   constructor(private http: HttpClient) { }
 
