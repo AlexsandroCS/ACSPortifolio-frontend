@@ -83,6 +83,6 @@ export class PrincipalComponent {
   public configurandoTitleLinkSite(title: string): string{
     const mudaText = title.replace(/ /g, '-');
     const mudaTextTwo = mudaText.replace(/#/g, 'sharp');
-    return mudaTextTwo.toLowerCase();
+    return mudaTextTwo;
   }
 }
