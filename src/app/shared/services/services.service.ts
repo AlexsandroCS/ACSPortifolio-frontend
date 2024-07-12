@@ -64,10 +64,11 @@ export class ServicesService {
     return requestOptions;
   }
 
-  public configurandoTitleLinkAPI(title: string): string{
+  public configurandoTitleLinkAPI(title: string): string {
     const mudaTextOne = title.replace(/-/g, ' ');
     const mudaTextTwo = mudaTextOne.replace(/#/g, 'sharp');
+    const encodedText = encodeURIComponent(mudaTextTwo.toLowerCase());
 
-    return mudaTextTwo.toLowerCase();
+    return encodedText;
   }
 }
