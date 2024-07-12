@@ -65,8 +65,7 @@ export class ServicesService {
   }
 
   public configurandoTitleLinkAPI(title: string): string {
-    const mudaTextOne = title.replace(/-/g, ' ');
-    const mudaTextTwo = mudaTextOne.replace(/#/g, 'sharp');
+    const mudaTextTwo = title.replace(/#/g, 'sharp');
     const encodedText = encodeURIComponent(mudaTextTwo.toLowerCase());
 
     return encodedText;
